@@ -15,19 +15,20 @@ class Dashboard extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Container(
+            child: SizedBox(
               width: double.infinity,
               height: 300,
-              color: Theme.of(context).colorScheme.primary,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(Icons.verified_user, color: Colors.white, size: 80.0),
-                  Text('myBank',
+                children: [
+                  Icon(Icons.verified_user_outlined,
+                      color: Theme.of(context).colorScheme.primary, size: 100),
+                  Text("myBank",
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Theme.of(context).colorScheme.primary,
                           fontSize: 90.0,
-                          fontWeight: FontWeight.bold))
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic))
                 ],
               ),
             ),
@@ -50,17 +51,13 @@ class Dashboard extends StatelessWidget {
 
   void _showContactList(BuildContext context) {
     Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => const ContactList(),
-      ),
+      MaterialPageRoute(builder: (context) => const ContactList()),
     );
   }
 
   _showTransactionsList(BuildContext context) {
     Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => TransactionsList(),
-      ),
+      MaterialPageRoute(builder: (context) => TransactionsList()),
     );
   }
 }

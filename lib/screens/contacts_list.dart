@@ -42,8 +42,7 @@ class _ContactListState extends State<ContactList> {
                     onClick: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => TransactionForm(contact),
-                        ),
+                            builder: (context) => TransactionForm(contact)),
                       );
                     },
                   );
@@ -74,11 +73,7 @@ class _ContactItem extends StatelessWidget {
   final Contact contact;
   final Function onClick;
 
-  const _ContactItem(
-    this.contact, {
-    required this.onClick,
-  });
-  // const _ContactItem({Key? key, required this.contact, required this.onClick}) : super(key: key);
+  const _ContactItem(this.contact, {required this.onClick});
 
   @override
   Widget build(BuildContext context) {
@@ -87,15 +82,10 @@ class _ContactItem extends StatelessWidget {
         onTap: () => onClick(),
         title: Text(
           contact.fullName,
-          style: const TextStyle(
-            fontSize: 24.0,
-            fontWeight: FontWeight.bold,
-          ),
+          style: const TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
         ),
-        subtitle: Text(
-          'Account Number: ${contact.accountNumber.toString()}',
-          style: const TextStyle(fontSize: 16.0),
-        ),
+        subtitle: Text('Account Number: ${contact.accountNumber.toString()}',
+            style: const TextStyle(fontSize: 16.0)),
       ),
     );
   }

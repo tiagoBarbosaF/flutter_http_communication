@@ -17,31 +17,26 @@ class _ContactFormState extends State<ContactForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('New contact'),
-      ),
+      appBar: AppBar(title: const Text('New contact')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             TextField(
-              controller: _fullNameController,
-              decoration: const InputDecoration(
-                labelText: 'Full Name',
-              ),
-              style: const TextStyle(fontSize: 24.0),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: TextField(
-                controller: _accountNumber,
+                controller: _fullNameController,
                 decoration: const InputDecoration(
-                  labelText: 'Account number',
+                  labelText: 'Full Name',
                 ),
-                style: const TextStyle(fontSize: 24.0),
-                keyboardType: TextInputType.number,
-              ),
-            ),
+                style: const TextStyle(fontSize: 24.0)),
+            Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: TextField(
+                    controller: _accountNumber,
+                    decoration: const InputDecoration(
+                      labelText: 'Account number',
+                    ),
+                    style: const TextStyle(fontSize: 24.0),
+                    keyboardType: TextInputType.number)),
             Padding(
               padding: const EdgeInsets.only(top: 16.0),
               child: SizedBox(
@@ -53,17 +48,13 @@ class _ContactFormState extends State<ContactForm> {
                         int.tryParse(_accountNumber.text);
                     final Contact newContact =
                         Contact(0, fullName, accountNumber);
-                    _contactDao.save(newContact).then(
-                          (id) => Navigator.pop(context),
-                        );
+                    _contactDao
+                        .save(newContact)
+                        .then((id) => Navigator.pop(context));
                   },
-                  child: const Text(
-                    'Create',
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                  child: const Text('Create',
+                      style: TextStyle(
+                          fontSize: 18.0, fontWeight: FontWeight.bold)),
                 ),
               ),
             ),

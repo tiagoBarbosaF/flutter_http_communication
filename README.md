@@ -1,6 +1,10 @@
 # Comunicação HTTP
 
-> Para uso do webApi de exemplo, vá a pasta **WebApiStudies** e no arquivo README tem toda a descrição de utilização.
+> **obs1.:** Para uso do webApi de exemplo, vá a pasta **WebApiStudies** e no arquivo README tem toda a descrição de utilização.
+> 
+> **obs2.:** Senha padrão para transferências é o valor 1000. 
+> 
+> **obs3.:** Alterar a url do `webclient.dart` para o seu ip local `const String baseUrl = 'http://<IP DA SUA MAQUINA AQUI>:8080/transactions';`
 
 ## Objetivos ao completar os estudos
 - Crie e mostre um Dialog
@@ -42,6 +46,9 @@
 - Capturando erros genéricos
 - Para saber mais - Respostas de sucesso
 - O que aprendi?
+    - Capturar exceptions específicas;
+    - Capturar múltiplas exceptions;
+    - Implementar exceptions personalizadas.
 
 ### Idempotência ao enviar transferências
 - Problema de multiplas requisições
