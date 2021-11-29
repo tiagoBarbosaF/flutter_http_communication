@@ -23,7 +23,7 @@ class TransactionsList extends StatelessWidget {
             case ConnectionState.none:
               break;
             case ConnectionState.waiting:
-              return const Progress();
+              return const Progress(message: "Loading ...");
               // ignore: dead_code
               break;
             case ConnectionState.active:

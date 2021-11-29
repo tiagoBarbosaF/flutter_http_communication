@@ -17,6 +17,8 @@ class TransactionWebClient {
   Future<Transaction> save(Transaction transaction, String password) async {
     final String transactionJson = jsonEncode(transaction.toJson());
 
+    await Future.delayed(const Duration(seconds: 2));
+
     final Response response = await client.post(Uri.parse(baseUrl),
         headers: {"Content-type": "application/json", "password": password},
         body: transactionJson);
@@ -25,12 +27,19 @@ class TransactionWebClient {
       return Transaction.fromJson(jsonDecode(response.body));
     }
 
-    throw HttpException(_statusCodeResponses[response.statusCode]);
+    throw HttpException(_getMessage(response.statusCode));
+  }
+
+  String? _getMessage(int statusCode) {
+    if (_statusCodeResponses.containsKey(statusCode)) {
+      return _statusCodeResponses[statusCode];
+    }
   }
 
   static final Map<int, String> _statusCodeResponses = {
     400: "Transfer amount not entered",
-    401: "Wrong password"
+    401: "Wrong password",
+    409: "Transaction already exists"
   };
 }
 

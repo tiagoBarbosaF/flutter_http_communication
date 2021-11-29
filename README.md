@@ -57,6 +57,9 @@
 - Evitando transferência duplicada
 - Para saber mais - Idempotência e UUID
 - O que aprendi?
+    - Aplicar idempotência ao enviar transferências;
+    - Utilizar UUID no Dart;
+    - Evitar problema de código HTTP inesperado.
 
 ### Feedback ao enviar transferência
 - Adicionando progresso no formulário
@@ -67,12 +70,19 @@
 - Conclusão
 - Projeto final
 - O que aprendi?
-
+    - Implementar feedback de envio ao enviar transferências;
+    - Realizar pós execução ao finalizar o Future.
 
 ***
 
 ## Flutter project screens - myBank App
-<img src="" width="200">
-<img src="" width="200">
-<img src="" width="200">
-<img src="" width="200">
+<img src="assets/img/screen01.png" width="180">
+<img src="assets/img/screen02.png" width="180">
+<img src="assets/img/screen03.png" width="180">
+<img src="assets/img/screen04.png" width="180">
+<img src="assets/img/screen05.png" width="180">
+<img src="assets/img/screen06.png" width="180">
+<img src="assets/img/screen07.png" width="180">
+<img src="assets/img/screen08.png" width="180">
+<img src="assets/img/screen09.png" width="180">
+<img src="assets/img/screen10.png" width="180">

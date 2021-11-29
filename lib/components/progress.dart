@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Progress extends StatelessWidget {
-  const Progress({Key? key}) : super(key: key);
+  final String message;
+
+  // ignore: use_key_in_widget_constructors
+  const Progress({this.message = "Loading"});
 
   @override
   Widget build(BuildContext context) {
@@ -9,16 +12,14 @@ class Progress extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [
+        children: [
           CircularProgressIndicator(
-            strokeWidth: 5.0,
+            strokeWidth: 8.0,
+            color: Theme.of(context).colorScheme.primary,
           ),
           Padding(
-            padding: EdgeInsets.only(top: 24.0),
-            child: Text(
-              'Loading',
-              style: TextStyle(fontSize: 24.0),
-            ),
+            padding: const EdgeInsets.only(top: 24.0),
+            child: Text(message, style: const TextStyle(fontSize: 24.0)),
           ),
         ],
       ),

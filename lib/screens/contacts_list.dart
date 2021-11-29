@@ -29,7 +29,7 @@ class _ContactListState extends State<ContactList> {
             case ConnectionState.none:
               break;
             case ConnectionState.waiting:
-              return const Progress();
+              return const Progress(message: "Sending ...");
             case ConnectionState.active:
               break;
             case ConnectionState.done:
@@ -80,12 +80,14 @@ class _ContactItem extends StatelessWidget {
     return Card(
       child: ListTile(
         onTap: () => onClick(),
+        // leading: Icon(Icons.person,
+            // size: 40, color: Theme.of(context).colorScheme.primary),
         title: Text(
           contact.fullName,
-          style: const TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
         subtitle: Text('Account Number: ${contact.accountNumber.toString()}',
-            style: const TextStyle(fontSize: 16.0)),
+            style: const TextStyle(fontSize: 16)),
       ),
     );
   }
